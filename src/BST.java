@@ -59,6 +59,21 @@ private Node delete(Node node, K key){
     if(node == null){
         return null;
     }
-    int
+    int cmp =key.compareTo(node.key);
+    if(cmp < 0){
+        node.left = delete(node.left, key);
+    }
+    else if(cmp > 0){
+        node.right = delete(node.right, key);
+    }
+    else{
+       Node replacement = findMin(node.right);
+       node.key = replacement.key;
+       node.val = replacement.val;
+       node.right = delete(node.right, replacement.key);
+        }
+    }
+    return node;
 }
+private
 }
