@@ -129,23 +129,23 @@
     private Node current;
     private Stack<Node> stack;
     public BSTIterator(){
-    stack = new Stack<>();
-    current = root;
+        stack = new Stack<>();
+        current = root;
     }
     public boolean hasNext(){
-    return !stack.isEmpty() || current!= null;
+        return !stack.isEmpty() || current!= null;
     }
     public KeyValue<K,V> next(){
-    while(current!=null){
-    stack.push(current);
-    current = current.left;
-    }
-    if(stack.isEmpty()){
-    throw new NoSuchElementException("not possible to iterate<<<");
-    }
-    Node node = stack.pop();
-    current =node.right;
-    return new KeyValue<>(node.key,node.val);
+        while(current!=null){
+            stack.push(current);
+            current = current.left;
+        }
+        if(stack.isEmpty()){
+            throw new NoSuchElementException("not possible to iterate<<<");
+        }
+        Node node = stack.pop();
+        current =node.right;
+        return new KeyValue<>(node.key,node.val);
     }
     }
     }
