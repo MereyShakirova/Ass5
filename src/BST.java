@@ -75,5 +75,11 @@ private Node delete(Node node, K key){
     }
     return node;
 }
-private
+private Node findMin(Node node){
+    if(node.left == null){
+        return node;
+    }
+    return findMin(node.left);
+}
+
 }
