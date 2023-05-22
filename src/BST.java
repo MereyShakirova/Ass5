@@ -13,5 +13,14 @@ private class Node{
         this.val = val;
     }
 }
-
+public void put(K key, V val){
+    root = put(root, key, val);
+}
+private Node put(Node node, K key, V val){
+    if(node==null){
+        size++;
+        return new Node(key, val);
+    }
+    int cmp = key.compare
+}
 }
