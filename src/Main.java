@@ -9,7 +9,8 @@ public static void main(String[] args){
  tree.put("S", 2);
  tree.put("E", 5);
  for (BST.KeyValue<String, Integer> entry: tree){
-  System.out.println("value iss" + entry.getKey() + );
+  System.out.println("key iss " + entry.getKey() + ", " + "value is " + entry.getValue() + ".");
  }
+ System.out.println("Size of tree is "+ tree.size() + ".");
 }
 }
