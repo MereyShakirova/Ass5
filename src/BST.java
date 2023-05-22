@@ -10,7 +10,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
-public class BST<K extends Comparable<K>, V> implements Iterable<BST.KeyValue<K,V>>{
+public class BST<K extends Comparable<K>, V> implements Iterable<BST.KeyValue<K,V>>{//represents a binary search tree where each node contains a key-value pair
 private Node root;
 private int size;
 private class Node{//represents a node in the binary search tree, holding a key-value pair along with references to its left and right child nodes.
@@ -104,7 +104,7 @@ public int size() {//returns the number of elements in the binary search tree
 public Iterator<KeyValue<K, V>> iterator(){//returns an iterator over the elements of the binary search tree in ascending order of keys
     return new BSTIterator();//implements the Iterator interface and provides the logic for iterating over the elements of the binary search tree
 }
-public static class KeyValue<K,V>{
+public static class KeyValue<K,V>{//represents a key-value pair in the binary search tree
     private K key;
     private V value;
     public KeyValue(K key, V value){
@@ -118,7 +118,7 @@ public static class KeyValue<K,V>{
         return value;
     }
 }
-private class BSTIterator implements Iterator<KeyValue<K,V>>{
+private class BSTIterator implements Iterator<KeyValue<K,V>>{//implements the Iterator interface and provides the logic for iterating over the elements of the binary search tree
 private Node current;
 private Stack<Node> stack;
 public BSTIterator(){
