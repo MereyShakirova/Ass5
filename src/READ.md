@@ -155,21 +155,38 @@ The BST class represents a binary search tree where each node contains a key-val
 In Main class I tested the code with different way, like putting, entering the letters, numbers so on to prove the code. Also we can see the size of tree, values, keys.  
 #### *Here is the solution code*:
 ![](https://cbgd.ask.fm/fd3/71a30/7839/4756/8b72/0d5fc8e2f2c4/original/421914.jpg)
-    
+
     public class Main {
-        public static void main(String[] args){
-            BST<String, Integer>tree = new BST<>();
-            tree.put("P", 0);
-            tree.put("R", 3);
-            tree.put("O", 4);
-            tree.put("M", 1);
-            tree.put("I", 8);
-            tree.put("S", 2);
-            tree.put("E", 5);
-            for (BST.KeyValue<String, Integer> entry: tree){
-                System.out.println("key iss " + entry.getKey() + ", " + "value is " + entry.getValue() + ".");
-            }
-        System.out.println("Size of tree is "+ tree.size() + ".");
+    public static void main(String[] args){
+        BST<Integer, String> bst = new BST<>();
+        bst.put(0, "P");
+        bst.put(3, "R");
+        bst.put(4, "O");
+        bst.put(1, "M");
+        bst.put(7, "I");
+        bst.put(2, "S");
+        bst.put(5, "E");
+        
+        System.out.println("Elements in the BST class:");
+        for (BST.KeyValue<Integer, String> entry: bst){
+            System.out.println("Keys: " + entry.getKey() + "; " + "Values: " + entry.getValue() + ";");
+        }
+        
+        bst.delete(0);
+        bst.delete(6);
+        System.out.println("After the deletion method:");
+        for (BST.KeyValue<Integer, String> entry: bst){
+            System.out.println("Keys: " + entry.getKey() + "; " + "Values: " + entry.getValue() + ";");
+        }
+        
+        
+        System.out.println("After the getting method:");
+        int key = 2;
+        String value = bst.get(key);
+        System.out.println("Value for key " + key + ": " + value);
+        
+        System.out.println("After the size method:");
+        System.out.println("Size of tree is "+ bst.size() + ".");
         }
     }
 # Thank you for your attention
