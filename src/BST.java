@@ -88,4 +88,26 @@ public int size() {
 public Iterator<keyValue<K, V>> iterator(){
     return new BSTIterator();
 }
+public static class KeyValue<K,V>{
+    private K key;
+    private V value;
+    public KeyValue(K key, V value){
+        this.key = key;
+        this.value = value;
+    }
+    public K getKey(){
+        return key;
+    }
+    public V getValue(){
+        return value;
+    }
+}
+private class BSTIterator implements Iterator<KeyValue<K,V>>{
+private Node current;
+private Stack<Node> stack;
+public BSTIterator(){
+    stack = new Stack<>();
+    current = root;
+}
+}
 }
