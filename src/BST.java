@@ -81,5 +81,11 @@ private Node findMin(Node node){
     }
     return findMin(node.left);
 }
+public int size() {
+    return size;
+}
 
+public Iterator<keyValue<K, V>> iterator(){
+    return new BSTIterator();
+}
 }
