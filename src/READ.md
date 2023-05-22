@@ -152,10 +152,26 @@
 
 ### Main:
 #### *Explanation:*
-
-
+In Main class I tested the code with different way, like putting, entering the letters, numbers so on to prove the code. Also we can see the size of tree, values, keys.  
 #### *Here is the solution code*:
 ![](https://cbgd.ask.fm/fd3/71a30/7839/4756/8b72/0d5fc8e2f2c4/original/421914.jpg)
-# Thank you for your attention!
+    
+    public class Main {
+        public static void main(String[] args){
+            BST<String, Integer>tree = new BST<>();
+            tree.put("P", 0);
+            tree.put("R", 3);
+            tree.put("O", 4);
+            tree.put("M", 1);
+            tree.put("I", 8);
+            tree.put("S", 2);
+            tree.put("E", 5);
+            for (BST.KeyValue<String, Integer> entry: tree){
+                System.out.println("key iss " + entry.getKey() + ", " + "value is " + entry.getValue() + ".");
+            }
+        System.out.println("Size of tree is "+ tree.size() + ".");
+        }
+    }
+# Thank you for your attention
 ![](https://avatars.mds.yandex.net/i?id=105671dd507f4ea050cf9b71a6c1a7e4-5312571-images-thumbs&n=13)
 
