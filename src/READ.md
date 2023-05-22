@@ -10,7 +10,7 @@
 ### BST:
 ![](https://avatars.mds.yandex.net/i?id=9031d8c7d532e00630f84cc9f86f312ef0808b1d-9203641-images-thumbs&n=13)
 #### *Explanation:*
-
+The BST class represents a binary search tree where each node contains a key-value pair. BST class contains several methods like put, delete, findMin, get, iterator, hasNext and next.
 #### *Here is the solution code*:
 ![](https://cbgd.ask.fm/fd3/71a30/7839/4756/8b72/0d5fc8e2f2c4/original/421914.jpg)
     
