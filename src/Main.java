@@ -20,11 +20,12 @@ public static void main(String[] args){
   System.out.println("Keys: " + entry.getKey() + "; " + "Values: " + entry.getValue() + ";");
  }
 
+ System.out.println("After the getting method:");
  int key = 2;
  String value = bst.get(key);
  System.out.println("Value for key " + key + ": " + value);
 
-
+ System.out.println("After the size method:");
  System.out.println("Size of tree is "+ bst.size() + ".");
 }
 }
