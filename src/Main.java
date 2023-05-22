@@ -9,6 +9,10 @@ public static void main(String[] args){
  tree.put(2, "S");
  tree.put(5, "E");
  tree.delete(0);
+ for (BST.KeyValue<Integer, String> entry: tree){
+  System.out.println("key iss " + entry.getKey() + ", " + "value is " + entry.getValue() + ".");
+ }
+ System.out.println("after the deletion:");
 
  for (BST.KeyValue<Integer, String> entry: tree){
   System.out.println("key iss " + entry.getKey() + ", " + "value is " + entry.getValue() + ".");
