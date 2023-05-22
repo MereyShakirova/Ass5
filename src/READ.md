@@ -13,20 +13,21 @@
 
 #### *Here is the solution code*:
 ![](https://cbgd.ask.fm/fd3/71a30/7839/4756/8b72/0d5fc8e2f2c4/original/421914.jpg)
+    
     import java.util.Iterator;
     import java.util.NoSuchElementException;
     import java.util.Stack;
     public class BST<K extends Comparable<K>, V> implements Iterable<BST.KeyValue<K,V>>{
     private Node root;
-    private int size;
-    private class Node{
-    private K key;
-    private V val;
-    private Node left, right;
-    public Node(K key, V val){
-    this.key = key;
-    this.val = val;
-    }
+        private int size;
+        private class Node{
+        private K key;
+        private V val;
+        private Node left, right;
+        public Node(K key, V val){
+        this.key = key;
+        this.val = val;
+        }
     }
     public void put(K key, V val){
     root = put(root, key, val);
