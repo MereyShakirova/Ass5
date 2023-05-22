@@ -1,10 +1,19 @@
+//put: This method inserts a key-value pair into the binary search tree. It uses recursion to traverse the tree and find the appropriate position for the new node.
+//get: This method retrieves the value associated with a given key from the binary search tree.
+//delete: This method removes a key-value pair from the binary search tree.
+//findMin: This method finds the node with the minimum key in a subtree. It is used to find the replacement node during deletion.
+//size: This method returns the number of elements in the binary search tree.
+//iterator: This method returns an iterator over the elements of the binary search tree in ascending order of keys.
+//hasNext: This method checks if there are more elements to iterate.
+//next: This method returns the next key-value pair in the iteration.
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 public class BST<K extends Comparable<K>, V> implements Iterable<BST.KeyValue<K,V>>{
 private Node root;
 private int size;
-private class Node{
+private class Node{//represents a node in the binary search tree, holding a key-value pair along with references to its left and right child nodes.
     private K key;
     private V val;
     private Node left, right;
@@ -13,7 +22,7 @@ private class Node{
         this.val = val;
     }
 }
-public void put(K key, V val){
+public void put(K key, V val){//inserts a key-value pair into the binary search tree
     root = put(root, key, val);
 }
 private Node put(Node node, K key, V val){
@@ -33,7 +42,7 @@ private Node put(Node node, K key, V val){
     }
     return node;
 }
-public V get(K key){
+public V get(K key){//retrieves the value associated with a given key from the binary search tree
     Node node = get(root,key);
     return node != null?node.val:null;
 }
@@ -52,7 +61,7 @@ private Node get(Node node, K key){
         return node;
     }
 }
-public void delete(K key){
+public void delete(K key){//removes a key-value pair from the binary search tree
     root = delete(root,key);
 }
 private Node delete(Node node, K key){
@@ -82,18 +91,18 @@ private Node delete(Node node, K key){
     }
     return node;
 }
-private Node findMin(Node node){
+private Node findMin(Node node){//finds the node with the minimum key in a subtree
     if(node.left == null){
         return node;
     }
     return findMin(node.left);
 }
-public int size() {
+public int size() {//returns the number of elements in the binary search tree
     return size;
 }
 
-public Iterator<KeyValue<K, V>> iterator(){
-    return new BSTIterator();
+public Iterator<KeyValue<K, V>> iterator(){//returns an iterator over the elements of the binary search tree in ascending order of keys
+    return new BSTIterator();//implements the Iterator interface and provides the logic for iterating over the elements of the binary search tree
 }
 public static class KeyValue<K,V>{
     private K key;
@@ -116,10 +125,10 @@ public BSTIterator(){
     stack = new Stack<>();
     current = root;
 }
-public boolean hasNext(){
+public boolean hasNext(){//checks if there are more elements to iterate
     return !stack.isEmpty() || current!= null;
 }
-public KeyValue<K,V> next(){
+public KeyValue<K,V> next(){//returns the next key-value pair in the iteration
     while(current!=null){
         stack.push(current);
         current = current.left;
