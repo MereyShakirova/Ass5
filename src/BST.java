@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
-public class BST <K extends Comparable<K>, V> implements Iterable<BST.KeyValue<K,V>> {
+public class BST<K extends Comparable<K>, V> implements Iterable<BST.KeyValue<K,V>>{
 private Node root;
 private int size;
 private class Node{
@@ -53,7 +53,7 @@ private Node get(Node node, K key){
     }
 }
 public void delete(K key){
-    root = delete(root, key);
+    root = delete(root,key);
 }
 private Node delete(Node node, K key){
     if(node == null){
@@ -61,12 +61,19 @@ private Node delete(Node node, K key){
     }
     int cmp =key.compareTo(node.key);
     if(cmp < 0){
-        node.left = delete(node.left, key);
+        node.left = delete(node.left,key);
     }
     else if(cmp > 0){
-        node.right = delete(node.right, key);
+        node.right = delete(node.right,key);
     }
     else{
+        if(node.left ==  null){
+            return node.right;
+        }
+        else if(node.right == null){
+            return node.left;
+        }
+        else{
        Node replacement = findMin(node.right);
        node.key = replacement.key;
        node.val = replacement.val;
@@ -85,7 +92,7 @@ public int size() {
     return size;
 }
 
-public Iterator<keyValue<K, V>> iterator(){
+public Iterator<KeyValue<K, V>> iterator(){
     return new BSTIterator();
 }
 public static class KeyValue<K,V>{
