@@ -45,6 +45,20 @@ private Node get(Node node, K key){
     if(cmp < 0){
         return get(node.left, key);
     }
-    else i()
+    else if(cmp > 0){
+        return get(node.right, key);
+    }
+    else{
+        return node;
+    }
+}
+public void delete(K key){
+    root = delete(root, key);
+}
+private Node delete(Node node, K key){
+    if(node == null){
+        return null;
+    }
+    int
 }
 }
