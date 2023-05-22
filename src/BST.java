@@ -125,7 +125,7 @@ public KeyValue<K,V> next(){
         current = current.left;
     }
     if(stack.isEmpty()){
-        throw new NoSuchElementException("///");
+        throw new NoSuchElementException("not possible to iterate<<<");
     }
     Node node = stack.pop();
     current =node.right;
