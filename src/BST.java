@@ -61,7 +61,26 @@ private Node get(Node node, K key){
         return node;
     }
 }
-public void delete(K key){//removes a key-value pair from the binary search tree
+
+
+private Node<K, V> consist(K key, Node current) {
+    if(current == null)&&(key.compareTo((K)current.key)==0{
+        return current;}
+        if(key.compareTo(K)current.key) < 0){
+        return getNode(current.left, key);}
+        else
+            return getNode(current.right, key);
+    }
+    public boolean consist(K key){
+    Node node = consist(key, root);
+    if(node == null){
+        return false;
+                }
+    else{
+        return true;
+    }
+
+    public void delete(K key){//removes a key-value pair from the binary search tree
     root = delete(root,key);
 }
 private Node delete(Node node, K key){
@@ -91,7 +110,9 @@ private Node delete(Node node, K key){
     }
     return node;
 }
-private Node findMin(Node node){//finds the node with the minimum key in a subtree
+
+
+    private Node findMin(Node node){//finds the node with the minimum key in a subtree
     if(node.left == null){
         return node;
     }
@@ -142,3 +163,5 @@ public KeyValue<K,V> next(){//returns the next key-value pair in the iteration
 }
 }
 }
+//implement method public consist and private consist one of them recursively
+
